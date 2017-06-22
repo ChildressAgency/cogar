@@ -1,0 +1,295 @@
+/*
+  Theme Name: Cogar Plumbing
+  Theme Author: The Childress Agency
+  Theme Author URI: https://childressagency.com
+  Version: 1.0
+*/
+
+body{
+  font-family:Lato, sans-serif;
+}
+
+.btn-alt{
+  display:inline-block;
+  text-transform:uppercase;
+  color:#fff;
+  background-color:#e97a44;
+  border:1px solid #ef9953;
+  padding:3px 15px;
+  -webkit-transition:background-color .3s ease;
+  transition:background-color .3s ease;
+}
+.btn-alt.btn-clear{
+  background-color:transparent;
+  color:#000;
+  font-weight:700;
+}
+.btn-alt:hover{
+  background-color:#0675b3;
+  color:#fff;
+  text-decoration:none;
+}
+.btn-alt.btn-clear:hover{
+  background-color:#e97a44;
+  color:#000;
+}
+.btn-main{
+  display:inline-block;
+  text-transform:uppercase;
+  color:#fff;
+  background-color:#0675b3;
+  border:1px solid #f5a361;
+  padding:3px 15px;
+  -webkit-transition:background-color .3s ease;
+  transition:background-color .3s ease;
+}
+.btn-main:hover{
+  background-color:#e97a44;
+  color:#fff;
+  text-decoration:none;
+}
+.btn-rounded{
+  border-radius:16px;
+}
+
+#masthead{
+  background-color:#00468f;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+#masthead .phone{
+  display:inline-block;
+  color:#fff;
+  letter-spacing:3px;
+  text-align:center;
+  font-size:14px;
+  line-height:1;
+  vertical-align:middle;
+  margin-right:15px;
+}
+#masthead .phone p{
+  margin-bottom:0;
+}
+#masthead .phone a{
+  display:block;
+  letter-spacing:normal;
+  font-size:18px;
+  color:#fff;
+  font-weight:700;
+}
+#masthead .social{
+  display:inline-block;
+  margin-right:15px;
+}
+#masthead .social a .fa-circle{
+  color:#55acee;
+  -webkit-transition:color .3s ease;
+  transition:color .3s ease;
+}
+#masthead .social a:hover .fa-circle{
+  color:#e97a44;
+}
+#masthead .request-service{
+  display:inline-block;
+  vertical-align:middle;
+}
+#masthead .btn-alt:hover{
+  background-color:#55acee;
+}
+
+nav.navbar{
+  background-color:#0675b3;
+  border-top:4px solid #55acee;
+  border-radius:0;
+  margin-bottom:0;
+}
+.navbar-header .logo>img.star-logo{
+  position:absolute;
+  margin-top:-50px;
+}
+.navbar-header .logo>img.the-cogar-company{
+  margin-left:165px;
+  margin-top:5px;
+}
+
+.navbar-nav{
+  margin-top:8px;
+}
+.navbar-nav>li>a{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  font-family:"Bree Serif", serif;
+}
+.navbar-nav>li.active>a,
+.navbar-nav>li>a:hover,
+.navbar-nav>li>a:focus{
+  background-color:transparent;
+  color:#ef9953;
+  text-decoration:none;
+}
+.container-fluid>.navbar-header{
+  margin-left:0;
+  margin-right:0;
+}
+
+.navbar-toggle{
+  border-color:#fff;
+}
+.navbar-toggle .icon-bar{
+  background-color:#fff;
+}
+
+#hero{
+  min-height:850px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#hero .caption{
+  max-width:550px;
+  text-align:center;
+}
+#hero .caption>h1{
+  color:#fff;
+  font-size:110px;
+  font-family:"Bree Serif", serif;
+  text-transform:uppercase;
+  text-shadow:2px 3px 20px #000;
+  line-height:1em;
+}
+#hero .caption>p{
+  color:#fff;
+  font-size:40px;
+  text-transform:uppercase;
+  line-height:45px;
+  max-width:450px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#hero .caption>.btn-main{
+  margin-top:20px;
+}
+
+#services{
+  background-color:#0675b3;
+  color:#fff;
+  text-align:center;
+  padding-top:25px;
+  padding-bottom:25px;
+}
+#services h2{
+  font-size:32px;
+  margin-top:0;
+  margin-bottom:0;
+  font-family:"Bree Serif", serif;
+}
+#services h1{
+  font-size:80px;
+  font-family:"Bree Serif", serif;
+}
+#services .btn-main{
+  margin-top:25px;
+}
+
+.service-thumbnail{
+  margin-top:25px;
+}
+.service-thumbnail>p{
+  font-size:18px;
+  margin-top:8px;
+}
+
+#experience{
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#experience .experience-types{
+  background-color:rgba(255,255,255,.8);
+  padding:50px 15px 60px;
+  text-align:center;
+}
+#experience .btn-alt{
+  display:block;
+  margin-top:5px;
+  max-width:260px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:22px;
+  text-transform:none;
+}
+#experience .experience-types>p{
+  font-weight:700;
+  line-height:1.2em;
+  margin-top:25px;
+  max-width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#experience .experience-types>p::first-child{
+  margin-top:25px;
+}
+#experience .btn-main{
+  margin-top:25px;
+}
+#experience .celebrating{
+  text-align:center;
+  color:#fff;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+#experience .celebrating>h2{
+  font-size:40px;
+  font-family:"Bree Serif", serif;
+  max-width:300px;
+  margin-left:auto;
+  margin-right:auto;
+  text-transform:uppercase;
+}
+
+#latestProjects{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:right top;
+  color:#fff;
+}
+
+
+@media (max-width:767px){
+  .navbar-header .logo>img.star-logo{
+    margin-top:0;
+  }
+  #masthead .pull-right{
+    text-align:center;
+  }
+  #masthead .phone{
+    margin-right:0;
+    margin-bottom:5px;
+  }
+  #masthead .social{
+    margin-right:0;
+    margin-bottom:5px;
+  }
+  .navbar-nav{
+    margin-top:65px;
+  }
+  #hero .caption>h1{
+    font-size:60px;
+  }
+  #services h1{
+    font-size:70px;
+    word-wrap:break-word;
+  }
+}
+@media (min-width:768px) and (max-width:1085px){
+  .navbar-nav{
+    margin-top:50px;
+  }
+}
+@media (max-width:991px){
+  #hero .caption{
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
