@@ -219,16 +219,17 @@ nav.navbar{
   font-size:22px;
   text-transform:none;
 }
-#experience .experience-types>p{
+#experience li.active .btn-clear{
+  text-decoration:none;
+  background-color:#e97a44;
+}
+#experience .experience-types p{
   font-weight:700;
   line-height:1.2em;
   margin-top:25px;
   max-width:400px;
   margin-left:auto;
   margin-right:auto;
-}
-#experience .experience-types>p::first-child{
-  margin-top:25px;
 }
 #experience .btn-main{
   margin-top:25px;
