@@ -6,4 +6,11 @@ jQuery(document).ready(function($){
   if($('.carousel').length){
     $('.carousel').bcSwipe({ threshold: 50 });
   }
+
+  if(typeof $.fn.slider == 'function'){
+    $('#year-built').slider();
+    $('#year-built').on('slide', function(slideEvt){
+      $('#year-built-value').text(slideEvt.value);
+    });
+  }
 });
