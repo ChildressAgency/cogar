@@ -55,6 +55,52 @@ body{
 .btn-rounded{
   border-radius:16px;
 }
+.btn-main>.fa-angle-left{
+  color:#f5a361;
+  font-size:29px;
+  margin-right:10px;
+  margin-top:-4px;
+  line-height:0;
+  vertical-align:middle;
+}
+.btn-main>.fa-angle-right{
+  color:#f5a361;
+  font-size:29px;
+  margin-left:10px;
+  margin-top:-4px;
+  line-height:0;
+  vertical-align:middle;
+}
+
+img.alignnone{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+img.aligncenter{
+  display:block;
+  max-width:100%;
+  margin:25px auto;
+  height:auto;
+}
+img.alignleft{
+  display:block;
+  max-width:100%;
+  height:auto;
+  float:left;
+  margin-top:25px;
+  margin-right:25px;
+  margin-bottom:25px;
+}
+img.alignright{
+  display:block;
+  max-width:100%;
+  height:auto;
+  float:right;
+  margin-top:25px;
+  margin-left:25px;
+  margin-bottom:25px;
+}
 
 #masthead{
   background-color:#00468f;
@@ -109,6 +155,7 @@ nav.navbar{
 .navbar-header .logo>img.star-logo{
   position:absolute;
   margin-top:-50px;
+  z-index:99;
 }
 .navbar-header .logo>img.the-cogar-company{
   margin-left:165px;
@@ -580,13 +627,19 @@ footer .footer-img{
   margin-top:25px;
   text-align:center;
 }
-.row-content h2{
+.row-content h2,
+article h2{
   font-size:22px;
   font-weight:700;
   margin-top:0;
   text-align:left;
 }
 .row-content p{
+  text-align:left;
+}
+.row-content ul{
+  list-style:none;
+  padding-left:0;
   text-align:left;
 }
 .row-content .btn-main{
@@ -603,6 +656,9 @@ footer .footer-img{
   font-weight:700;
   text-align:center;
 }
+.page-content{
+  margin-top:40px;
+}
 .page-content .btn-main{
   margin-top:40px;
 }
@@ -610,12 +666,16 @@ footer .footer-img{
 .project-filter{
   text-align:right;
   margin-top:40px;
+  margin-bottom:40px;
+}
+.project-filter #goback{
+  float:left;
 }
 .project-filter>select{
   background-color:#0675b3;
   color:#fff;
   text-transform:uppercase;
-  padding:5px 15px;
+  padding:3px 15px;
   border:1px solid #e97a44;
 }
 
@@ -698,9 +758,35 @@ footer .footer-img{
   background-color:transparent;
 }
 
+#comments h2{
+  font-size:18px;
+  color:#e97a44;
+  letter-spacing:3px;
+}
+#comments ul{
+  list-style:none;
+  padding-left:0;
+}
+#comments li{
+  margin-bottom:25px;
+}
+.comment-header p{
+  margin-bottom:0;
+}
+.comment-body{
+  margin-top:5px;
+}
+
+.post-nav{
+  margin-top:40px;
+  text-align:center;
+}
 
 
 @media (max-width:767px){
+  nav.navbar{
+    background-color:#0675b3;
+  }
   .navbar-header .logo>img.star-logo{
     margin-top:0;
   }
