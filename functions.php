@@ -40,16 +40,14 @@ function cogar_scripts(){
     '', 
     true
   );
-
-  /*  
+  
   wp_register_script(
     'google-maps',
-    '//maps.googleapis.com/maps/api/js?key=AIzaSyATxZFODUTVGPygX9aS8tPy5u661OEbeGg',
+    '//maps.googleapis.com/maps/api/js?key=AIzaSyDsAyHKgU5GtaAEIGB3p3qy9p8kgpWrGL4',
     array('jquery'),
     '',
     false
   );
-  */
 
   wp_register_script(
     'cogar-scripts', 
@@ -289,6 +287,49 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	}
 }
 
+add_action('init', 'cogar_create_post_type');
+function cogar_create_post_type(){
+  $projects_labels = array(
+    'name' => 'Projects',
+    'singular_name' => 'Project',
+    'menu_name' => 'Projects',
+    'add_new_item' => 'Add Project',
+    'search_items' => 'Search Projects',
+    'edit_items' => 'Edit Project',
+    'new_items' => 'New Project',
+    'not_found' => 'No Projects Found'
+  );
+  $projects_args = array(
+    'labels' => $projects_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 5, 
+    'query_var' => 'cogar_projects',
+    'supports' => array('title', 'editor', 'custom_fields')
+  );
+  register_post_type('cogar_projects', $projects_args);
+
+  register_taxonomy('project_types',
+    'cogar_projects',
+    array(
+      'hierarchical' => true,
+      'labels' => array(
+        'name' => 'Project Types',
+        'singular_name' => 'Project Type',
+        'menu_name' => 'Project Types',
+        'all_items' => 'All Project Types',
+        'edit_item' => 'Edit Project Type',
+        'view_item' => 'View Project Type',
+        'update_item' => 'Update Project Type',
+        'add_new_item' => 'Add New Project Type',
+        'new_item_name' => 'New Project Type',
+        'search_items' => 'Search Project Types',
+        'not_found' => 'Project Type Not Found'
+      )
+    )
+  );
+}
+
 if(function_exists('acf_add_options_page')){
   acf_add_options_page(array(
     'page_title' => 'General Site Settings',
@@ -306,4 +347,9 @@ if(function_exists('acf_add_options_page')){
     'capability' => 'edit_posts',
     'redirect' -> false
   ));
+}
+
+add_action('acf/init', 'cogar_acf_init');
+function cogar_acf_init(){
+	acf_update_setting('google_api_key', 'AIzaSyDsAyHKgU5GtaAEIGB3p3qy9p8kgpWrGL4');
 }
