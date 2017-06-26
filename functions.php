@@ -61,7 +61,9 @@ function cogar_scripts(){
   
   wp_enqueue_script('bootstrap-script');
   wp_enqueue_script('fontawesome');
-  wp_enqueue_script('bootstrap-slider');
+  if(is_page('contact')){
+    wp_enqueue_script('bootstrap-slider');
+  }
 	//wp_enqueue_script('google-maps');
   wp_enqueue_script('cogar-scripts');  
 }
@@ -75,7 +77,9 @@ function cogar_styles(){
   
   wp_enqueue_style('bootstrap-css');
   wp_enqueue_style('google-fonts');
-	wp_enqueue_style('bootstrap-slider-css');
+  if(is_page('contact')){
+  	wp_enqueue_style('bootstrap-slider-css');
+  }
   wp_enqueue_style('cogar');
 }
 
@@ -283,4 +287,23 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			echo $fb_output;
 		}
 	}
+}
+
+if(function_exists('acf_add_options_page')){
+  acf_add_options_page(array(
+    'page_title' => 'General Site Settings',
+    'menu_title' => 'General Settings',
+    'menu_slug' => 'global-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+  ));
+}
+if(function_exists('acf_add_options_page')){
+  acf_add_options_page(array(
+    'page_title' => 'Customer Reviews',
+    'menu_title' => 'Reviews',
+    'menu_slug' => 'reviews',
+    'capability' => 'edit_posts',
+    'redirect' -> false
+  ));
 }
