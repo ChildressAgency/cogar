@@ -92,7 +92,7 @@
 </section>
 
 <?php
-  $projects - new WP_Query(array('post_type' => 'projects', 'posts_per_page' => 3, 'post_status' => 'publish'));
+  $projects - new WP_Query(array('post_type' => 'cogar_projects', 'posts_per_page' => 3, 'post_status' => 'publish'));
   if($projects->have_posts()): ?>
 <section id="latestProjects" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/diamond-metal-bg.jpg);">
   <div class="container">
@@ -105,7 +105,7 @@
             <img src="<?php echo $featured_image['url']; ?>" class="img-responsive center-block" alt="<?php echo $featured_image['alt']; ?>" />
             <div class="caption">
               <h3><?php the_title(); ?></h3>
-              <p><?php the_excerpt(); ?></p>
+              <?php the_excerpt(); ?>
               <?php $comment_count = wp_count_comments(get_the_ID()); ?>
               <h4><?php echo get_the_date('j F Y');?>&nbsp;&nbsp;<?php echo $comment_count->approved; ?> Comment<?php echo ($comment_count->approved > 1) ? 's' : ''; ?></h4>
             </div>

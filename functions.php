@@ -353,3 +353,15 @@ add_action('acf/init', 'cogar_acf_init');
 function cogar_acf_init(){
 	acf_update_setting('google_api_key', 'AIzaSyDsAyHKgU5GtaAEIGB3p3qy9p8kgpWrGL4');
 }
+
+add_filter('next_post_link', 'cogar_next_post_link_attributes');
+function cogar_next_post_link_attributes($output){
+	$code = 'class="btn-main pull-right"';
+	return str_replace('<a href=', '<a ' . $code . ' href=', $output);
+}
+
+add_filter('previous_post_link', 'cogar_previous_post_link_attributes');
+function cogar_previous_post_link_attributes($output){
+	$code = 'class="btn-main pull-left"';
+	return str_replace('<a href=', '<a ' . $code . ' href=', $output);
+}

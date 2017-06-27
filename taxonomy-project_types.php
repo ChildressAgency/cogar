@@ -1,10 +1,11 @@
 <?php get_header(); ?>
+<?php $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); ?>
 <main id="main">
   <div class="container">
     <?php if(get_field('page_title')): ?>
-      <h1 class="page-title"><?php the_field('page_title'); ?></h1>
+      <h1 class="page-title"><?php the_field('page_title'); ?> - <?php echo $term->name; ?></h1>
     <?php else: ?>
-      <h1 class="page-title">Projects</h1>
+      <h1 class="page-title">Projects - <?php echo $term->name; ?></h1>
     <?php endif; ?>
     <?php if(get_field('page_subtitle')): ?>
       <p class="page-subtitle"><?php the_field('page_subtitle'); ?></p>
@@ -24,14 +25,9 @@
       </script>
     </div>
     <?php
-      $projects = new WP_Query(array(
-        'post_type' => 'cogar_projects',
-        'post_per_page' => 9,
-        'post_status' => 'publish'
-      ));
-      if($projects->have_posts()):  ?>
+      if(have_posts()):  ?>
         <div class="row">
-          <?php $p=0; while($projects->have_posts()): $projects->the_post(); ?>
+          <?php $p=0; while(have_posts()): the_post(); ?>
             <?php if($p%3==0){ echo '<div class="clearfix"></div>'; } ?>
             <div class="col-sm-4">
               <a href="<?php the_permalink(); ?>" class="project-thumbnail">
@@ -45,11 +41,12 @@
                 </div>
               </a>
             </div>
-          <?php $p++; endwhile; wp_pagenavi(array('query' => $projects)); ?>
+          <?php $p++; endwhile; wp_pagenavi(); ?>
         </div>
     <?php else: ?>
       <h2>No projects found.</h2>
     <?php endif; ?>
   </div>
 </main>
+
 <?php get_footer(); ?>
