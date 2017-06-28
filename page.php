@@ -37,7 +37,7 @@
         </div><!-- .container -->
         <section class="callout">
           <div class="container">
-            <?php the_field('callout'); ?>
+            <?php the_sub_field('callout_text'); ?>
           </div>
         </section>
         <div class="container">

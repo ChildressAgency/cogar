@@ -25,25 +25,25 @@
               <p>Email: <a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a></p>
               <div class="social">
                 <?php if(get_field('facebook', 'option')): ?>
-                  <a href="<?php the_field('facebook', 'option'); ?>" class="fa-stack fa-lg">
+                  <a href="<?php the_field('facebook', 'option'); ?>" class="fa-stack fa-lg" target="_blank">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-facebook-official fa-stack-1x fa-inverse"></i>
                   </a>
                 <?php endif; ?>
                 <?php if(get_field('twitter', 'option')): ?>
-                  <a href="<?php the_field('twitter', 'option'); ?>" class="fa-stack fa-lg">
+                  <a href="<?php the_field('twitter', 'option'); ?>" class="fa-stack fa-lg" target="_blank">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                   </a>
                 <?php endif; ?>
                 <?php if(get_field('linkedin', 'option')): ?>
-                  <a href="<?php the_field('linkedin', 'option'); ?>" class="fa-stack fa-lg">
+                  <a href="<?php the_field('linkedin', 'option'); ?>" class="fa-stack fa-lg" target="_blank">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
                   </a>
                 <?php endif; ?>
                 <?php if(get_field('google_plus', 'option')): ?>
-                  <a href="<?php the_field('google_plus', 'option'); ?>" class="fa-stack fa-lg">
+                  <a href="<?php the_field('google_plus', 'option'); ?>" class="fa-stack fa-lg" target="_blank">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
                   </a>

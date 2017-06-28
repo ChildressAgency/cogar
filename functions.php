@@ -62,7 +62,7 @@ function cogar_scripts(){
   if(is_page('contact')){
     wp_enqueue_script('bootstrap-slider');
   }
-	//wp_enqueue_script('google-maps');
+	wp_enqueue_script('google-maps');
   wp_enqueue_script('cogar-scripts');  
 }
 
@@ -305,7 +305,7 @@ function cogar_create_post_type(){
     'public' => true,
     'menu_position' => 5, 
     'query_var' => 'cogar_projects',
-    'supports' => array('title', 'editor', 'custom_fields')
+    'supports' => array('title', 'editor', 'custom_fields', 'comments', 'revisions')
   );
   register_post_type('cogar_projects', $projects_args);
 
@@ -345,7 +345,7 @@ if(function_exists('acf_add_options_page')){
     'menu_title' => 'Reviews',
     'menu_slug' => 'reviews',
     'capability' => 'edit_posts',
-    'redirect' -> false
+    'redirect' => false
   ));
 }
 

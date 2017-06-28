@@ -17,6 +17,9 @@
           <div class="col-sm-6">
             <div class="row-content">
               <?php the_sub_field('row_content'); ?>
+              <?php if(get_field('button_link')): ?>
+                <a href="<?php the_field('button_link'); ?>" class="btn-main"><?php the_field('button_text'); ?></a>
+              <?php endif; ?>
             </div>
           </div>
           <div class="col-sm-6">
@@ -30,6 +33,14 @@
         <article class="page-content">
           <?php the_sub_field('page_content'); ?>
         </article>
+      <?php elseif(get_row_layout() == 'callout'): ?>
+        </div><!-- .container -->
+        <section class="callout">
+          <div class="container">
+            <?php the_sub_field('callout_text'); ?>
+          </div>
+        </section>
+        <div class="container">
       <?php endif; ?>
 
     <?php endwhile; else: ?>

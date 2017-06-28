@@ -10,13 +10,13 @@
       <p class="page-subtitle"><?php the_field('page_subtitle'); ?></p>
     <?php endif; ?>
     <div class="project-filter">
-      <?php wp_dropdown_categories('shop_option_none=Project Type'); ?>
+      <?php wp_dropdown_categories('shop_option_all=Show All&show_option_none=Project Type&hide_empty=0&taxonomy=project_types&value_field=slug'); ?>
       <script>
         var dropdown = document.getElementById("cat");
 
         function onFilterChange(){
-          if(dropdown.options[dropdown.selectedIndex].value > 0){
-            location.href = "<?php echo esc_url(home_url('/')); ?>?cat=" + dropdown.options[dropdown.selectedIndex].value;
+          if(dropdown.options[dropdown.selectedIndex].value !== -1){
+            location.href = "<?php echo esc_url(home_url('/')); ?>?taxonomy=project_types&term=" + dropdown.options[dropdown.selectedIndex].value;
           }
         }
 

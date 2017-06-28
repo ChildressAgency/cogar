@@ -21,6 +21,7 @@
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-wrench-plunger.png" class="img-responsive center-block" alt="Icon with wrench and plunger" />
       <?php if(get_field('hero_subtitle')): ?>
         <p><?php the_field('hero_subtitle'); ?></p>
+      <?php endif; ?>
       <a href="<?php echo home_url('contact'); ?>" class="btn-main">Request a Service</a>
     </div>
   </div>
@@ -34,8 +35,8 @@
         <?php if($c%4==0){ echo '<div class="clearfix hidden-sm"></div>'; } ?>
         <?php if($c%2==0){ echo '<div class="clearfix visible-sm-block"></div>'; } ?>
         <div class="col-sm-6 col-md-3">
-          <a href="<?php echo get_permalink(get_sub_field('service')); ?>" class="service-thumbnail">
-            <?php $service_iamge = get_sub_field('service_image'); ?>
+          <a href="<?php the_sub_field('service'); ?>" class="service-thumbnail">
+            <?php $service_image = get_sub_field('service_image'); ?>
             <img src="<?php echo $service_image['url']; ?>" class="img-responsive center-block" alt="<?php echo $service_image['alt']; ?>" />
             <p><?php the_sub_field('service_title'); ?></p>
           </a>
@@ -45,7 +46,8 @@
     <?php endif; ?>
     <?php if(get_field('our_services_subtitle')): ?>
       <h1><?php the_field('our_services_subtitle'); ?></h1>
-    <a href="<?php echo home_url('services'); ?>" class="btn-main">View All services</a>
+    <?php endif; ?>
+    <a href="<?php echo home_url('water-heaters'); ?>" class="btn-main">View All services</a>
   </div>
 </section>
 <section id="experience" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/drain-bg.jpg); background-position:center center;">
@@ -92,7 +94,7 @@
 </section>
 
 <?php
-  $projects - new WP_Query(array('post_type' => 'cogar_projects', 'posts_per_page' => 3, 'post_status' => 'publish'));
+  $projects = new WP_Query(array('post_type' => 'cogar_projects', 'posts_per_page' => 3, 'post_status' => 'publish'));
   if($projects->have_posts()): ?>
 <section id="latestProjects" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/diamond-metal-bg.jpg);">
   <div class="container">
@@ -123,7 +125,7 @@
   <img src="<?php echo $star_rating_image['url']; ?>" class="img-responsive star-rating" alt="<?php echo $star_rating_image['alt']; ?>" />
   <div class="container">
     <?php 
-      $reviews = get_field('customer_reviews');
+      $reviews = get_field('customer_reviews', 'option');
       if($reviews):
         $review_count = count($reviews);
         if($review_count > 1): ?>
@@ -132,7 +134,7 @@
             <div id="reviewsCarousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 <?php $i=0; foreach($reviews as $review): ?>
-                  <div class="item<?php if($i==0){echo ' active'; ?>">
+                  <div class="item<?php if($i==0){ echo ' active'; } ?>">
                     <div class="review">
                       <?php echo $review['review']; ?>
                     </div>
@@ -155,6 +157,7 @@
                   <li data-target="#reviewsCarousel" data-slide-to="<?php echo $r; ?>"<?php if($r==1){ echo ' class="active"'; } ?>></li>
                 <?php endfor; ?>
               </ol>
+              <a href="<?php echo home_url('contact'); ?>" class="btn-main">Request a service</a>
             </div>
         <?php else: //only 1 review ?>
           <div class="reviews-carousel">
@@ -166,11 +169,11 @@
                 </div>
                 <p class="review-author">- <?php echo $reviews[0]['review_author']; ?></p>
               </div>
+              <a href="<?php echo home_url('contact'); ?>" class="btn-main">Request a service</a>
             </div>
           </div>
         <?php endif; ?>
       <?php endif; //no reviews ?>
-      <a href="<?php echo home_url('contact'); ?>" class="btn-main">Request a service</a>
     </div>
   </div>
 </section>
