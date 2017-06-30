@@ -44,8 +44,8 @@
       <?php $c++; endwhile; ?>
     </div>
     <?php endif; ?>
-    <?php if(get_field('our_services_subtitle')): ?>
-      <h1><?php the_field('our_services_subtitle'); ?></h1>
+    <?php if(get_field('our_service_subtitle')): ?>
+      <h1><?php the_field('our_service_subtitle'); ?></h1>
     <?php endif; ?>
     <a href="<?php echo home_url('water-heaters'); ?>" class="btn-main">View All services</a>
   </div>
