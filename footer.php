@@ -52,18 +52,7 @@
             </div>
             <div class="col-sm-4">
               <h2>Newsletter Signup</h2>
-              <form>
-                <p>Sign up to receive free emails.</p>
-                <div class="form-group">
-                  <label for="your-name" class="sr-only">Name</label>
-                  <input type="text" id="your-name" name="your-name" class="form-control" placeholder="Name" />
-                </div>
-                <div class="form-group">
-                  <label for="email" class="sr-only">Email</label>
-                  <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
-                </div>
-                <input type="submit" class="btn-alt" value="Submit" />
-              </form>
+              <?php echo do_shortcode('[contact-form-7 id="223" title="Newsletter Signup"]'); ?>
             </div>
           </div>
           <div class="colophon">
