@@ -10,12 +10,40 @@
     <meta http-equiv="cache-control" content="private">
     <title>Cogar Plumbing</title>
 
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <?php wp_head(); ?>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-30535612-129', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </head>
   <body <?php body_class(); ?>>
     <div id="masthead">
@@ -102,7 +130,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li<?php if(is_page('projects')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('projects'); ?>">Projects</a></li>
-                <li<?php if(is_page('services') || $parent_slug == 'services'){ echo ' class="active"'; } ?>><a href="<?php echo home_url('water-heaters'); ?>">Services</a></li>
+                <!--<li<?php if(is_page('services') || $parent_slug == 'services'){ echo ' class="active"'; } ?>><a href="<?php echo home_url('water-heaters'); ?>">Services</a></li>-->
                 <li<?php if(is_page('residential')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('residential'); ?>">Residential</a></li>
                 <li<?php if(is_page('commercial')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('commercial'); ?>">Commercial</a></li>
                 <li<?php if(is_page('property-management')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('property-management'); ?>">Property Management</a></li>
@@ -138,17 +166,17 @@
             wp_nav_menu($services_navbar_args);
           */
             //function cogar_services_navbar_fallback_menu(){ ?>
-              <div id="servicesNavbar" class="navbar-collapse collapse">
+              <!--<div id="servicesNavbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                   <li<?php if(is_page('water-heaters')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('water-heaters'); ?>">Water Heaters</a></li>
+                  <li<?php if(is_page('water-filtration')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('water-filtration'); ?>">Water Filtration</a></li>
                   <li<?php if(is_page('toilets-showers-tubs')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('toilets-showers-tubs'); ?>">Toilets, Showers &amp; Tubs</a></li>
                   <li<?php if(is_page('drain-cleaning')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('drain-cleaning'); ?>">Drain Cleaning</a></li>
-                  <li<?php if(is_page('sewer-line-repairs')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sewer-line-repairs'); ?>">Sewer Line Repairs</a></li>
+                  <li<?php if(is_page('sewerwater-line-repairs')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sewerwater-line-repairs'); ?>">Sewer/Water Line Repairs</a></li>
                   <li<?php if(is_page('sewage-sump-pumps')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sewage-sump-pumps'); ?>">Sewage &amp; Sump Pumps</a></li>
                   <li<?php if(is_page('well-pump-repairs')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('well-pump-repairs'); ?>">Well Pump &amp; Repairs</a></li>
-                  <li<?php if(is_page('waterline-replacement')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('waterline-replacement'); ?>">Waterline Replacement</a></li>
                 </ul>
-              </div>
+              </div>-->
             <?php //}
                endif; ?>
           
